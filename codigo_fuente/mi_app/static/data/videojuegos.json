@@ -1,0 +1,35 @@
+[
+    {"id":1, "Nombre" : "Grand Theft Auto Vice City", "Precio": 14.95, "imagen":"../static/img/gtavicecity.webp", "id_categoria":1},
+    {"id":2,"Nombre" : "GTA V", "Precio": 19.99, "imagen":"../static/img/gtaV.webp", "id_categoria":1},
+    {"id":3,"Nombre" : "Watch Dogs 2", "Precio": 19.95, "imagen":"../static/img/watchdogs2.webp", "id_categoria":1},
+    {"id":4,"Nombre" : "Assassins Creed Shadows", "Precio": 69.95, "imagen":"../static/img/assasinsCreedShadows.webp", "id_categoria":1},
+    {"id":5,"Nombre" : "Palworld", "Precio": 21.39, "imagen":"../static/img/palword.webp", "id_categoria":1},
+    {"id":6,"Nombre" : "Elden Ring", "Precio": 44.99, "imagen":"../static/img/eldenring.webp", "id_categoria":1},
+    {"id":7,"Nombre" : "Need For Speed Underground Rivals", "Precio": 4.95, "imagen":"../static/img/needforspeedundergorund.webp", "id_categoria":1},
+    {"id":8,"Nombre" : "Skyrim", "Precio": 39.99, "imagen":"../static/img/skyrim.webp", "id_categoria":1},
+    {"id":9,"Nombre" : "No Mans Sky", "Precio":  57.68, "imagen":"../static/img/nomanssky.webp", "id_categoria":1},
+    {"id":10,"Nombre" : "Pokemon Escarlata", "Precio": 39.90, "imagen":"../static/img/pokemonescarlata.webp", "id_categoria":1},
+
+    {"id":11,"Nombre" : "Call Of Duty Modern Warfare III", "Precio": 8.99, "imagen":"../static/img/codmw3.webp", "id_categoria":2},
+    {"id":12,"Nombre" : "Call Of Duty Advanced Warfare", "Precio": 14.95, "imagen":"../static/img/codadvancedwarfare.webp", "id_categoria":2},
+    {"id":13,"Nombre" : "Call Of Duty WWII", "Precio": 24.95, "imagen":"../static/img/codww2.webp", "id_categoria":2},
+    {"id":14,"Nombre" : "Call Of Duty World At War", "Precio": 7.50, "imagen":"../static/img/codWorldatWar.webp", "id_categoria":2},
+    {"id":15,"Nombre" : "Destiny 2", "Precio": 9.50, "imagen":"../static/img/destiny2.webp", "id_categoria":2},
+    {"id":16,"Nombre" : "Warhammer SpaceMarine", "Precio": 44.99, "imagen":"../static/img/warhammer.webp", "id_categoria":2},
+    {"id":17,"Nombre" : "Titanfall 2", "Precio": 29.99, "imagen":"../static/img/titanfall2.webp", "id_categoria":2},
+    {"id":18,"Nombre" : "Conquerors blade", "Precio": 47.79, "imagen":"../static/img/conquerorsbladeknightfall.webp", "id_categoria":2},
+    {"id":19,"Nombre" : "Battlefield IV", "Precio": 39.99, "imagen":"../static/img/battlefield4.webp", "id_categoria":2},
+    {"id":20,"Nombre" : "Battlefield V", "Precio": 49.99, "imagen":"../static/img/battlefield5.webp", "id_categoria":2},
+
+    {"id":21,"Nombre" : "Ultimate Fishing Simulator", "Precio": 19.99, "imagen":"../static/img/fishingsimulator.webp", "id_categoria":3},
+    {"id":22,"Nombre" : "NBA 2K25", "Precio": 79.99, "imagen":"../static/img/nba2k25.webp", "id_categoria":3},
+    {"id":23,"Nombre" : "NHL 25", "Precio": 79.99, "imagen":"../static/img/nhl25.webp", "id_categoria":3},
+    {"id":24,"Nombre" : "WWE 2K24", "Precio": 69.99, "imagen":"../static/img/wwe2k24.webp", "id_categoria":3},
+    {"id":25,"Nombre" : "Mario Golf World Tour", "Precio": 39.99, "imagen":"../static/img/mariogolf.webp", "id_categoria":3},
+    {"id":26,"Nombre" : "Le mans Ultimate", "Precio": 34.99, "imagen":"../static/img/lemansultimate.webp", "id_categoria":3},
+    {"id":27,"Nombre" : "UFC 5", "Precio": 39.99, "imagen":"../static/img/ufc5.webp", "id_categoria":3},
+    {"id":28,"Nombre" : "AO Tennis 2", "Precio": 49.99, "imagen":"../static/img/aotennis2.webp", "id_categoria":3},
+    {"id":29,"Nombre" : "EAFC 25", "Precio": 69.99, "imagen":"../static/img/eafc25.webp", "id_categoria":3},
+    {"id":30,"Nombre" : "F1 24", "Precio": 69.99, "imagen":"../static/img/f124.webp", "id_categoria":3}
+
+]
