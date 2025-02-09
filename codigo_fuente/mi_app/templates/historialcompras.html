@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<h1 class="display-4">Tus Compras</h1>
+  
+    <div id="historial_de_compras">
+
+        <h2 id="titulo_historial">Historial de Compras</h2>
+        <!--Si el usuario tiene compras realizadas se le mostrará este historial, sino muestra el texto de abajo-->
+        {% if detalles_historial_html %}
+
+            <ul id="lista_compras">
+                <!--Bucle sobre el diccionario que hemos mandado en vistas, gracias a eso podemos acceder a los atributos ; usando clave valor y items ya que es un diccionario-->
+                {% for videojuego_id, detalles in detalles_historial_html.items() %}
+                    <li>
+                        <img src="{{ detalles.imagen }}" alt="{{ detalles.titulo }}" />
+                        <div>
+                            <h2 id="titulo_videojuego">{{ detalles.titulo }}</h2>
+                            <p id="precio_videojuego">Precio: {{ detalles.precio }} €</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tienes compras registradas.</p>
+        {% endif %}
+    </div>
+
+  
+{% endblock %}

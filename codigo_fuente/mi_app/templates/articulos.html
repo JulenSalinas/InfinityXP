@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+
+  <div id ="antesdearticulos">
+    
+    <h1>Catálogo de Videojuegos</h1>
+    
+   
+   
+
+    
+    <div id="app"></div>
+
+
+    <!--HTML De la barra de navegación-->
+
+    <div class="search-wrapper">
+      <label for="search">Buscar Videojuego</label>
+      <input type="search" id="search" data-search>
+    </div>
+    
+    
+  </div><br>
+ 
+
+    <!--Bucle for, gracias a este podemos plasmar en los cards toda la información de cada videojuego mediante su atributo, gracias a la variable que hemos mandado desde el archivo de vistas-->
+    <!--A su vez, podemos también observar que usa diversas clases y atributos que más adelante empleará en el script para poder dar uso a la barra de búsqueda-->
+    <div class="containerbucle" data-user-cards-container>
+      {% for videojuego in videojuegos_html.items %}
+      
+
+      <div class="card" style="width: 18rem;" :key="item.id">
+          <img src="{{ videojuego.imagen }}" class="card-img-top" alt="{{videojuego.titulo}}" loading="lazy">
+          <div class="card-body">
+              <h5 class="card-title" data-header>{{ videojuego.titulo }}</h5> 
+              <p class="card-text" data-body>{{ videojuego.precio }} €</p> 
+          </div>
+          
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ videojuego.categoria.nombre_categoria }}</li>
+          </ul>
+         
+          <div class="card-body">
+              <a class="btn btn-primary" href="{{ url_for('catalog.metodo_insertar_carrito', id_usuario=current_user.id , id_videojuego=videojuego.id) }}">Añadir al carrito</a>
+              <a class="btn btn-primary" href="{{ url_for('catalog.metodo_insertar_favoritos', id_usuario=current_user.id , id_videojuego=videojuego.id) }}">Favoritos</a>
+
+              <!--Dos enlaces que llaman a métodos en vistas pasándole el id del usuario y el id del videojuego para inserar tanto en el carrito como en la lista de favoritos-->
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script>
+
+    // Funciones que el propio sidebar incluía para abrir y cerrar el mismo
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    
+  }
+
+  function openNav2() {
+    document.getElementById("mySidebar2").style.width = "250px";
+    document.getElementById("main2").style.marginLeft = "250px";
+    
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    
+  }
+
+  function closeNav2() {
+    document.getElementById("mySidebar2").style.width = "0";
+    document.getElementById("main2").style.marginLeft= "0";
+    
+  }
+
+</script>
+
+<script>
+const { createApp } = Vue;
+
+createApp({
+  template: `
+  
+  <div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Ver Carrito</button>
+</div>
+
+<div id="main2">
+  <button class="openbtn" onclick="openNav2()">☰ Ver Favoritos</button>
+</div>
+
+
+
+
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  
+  <h2>Carrito</h2>
+  
+  <!--Bucle for para poder obtener los datos del carrito mediante los atributos de la tabla gracias a una variable que hemos pasado en el archivo de vistas-->
+  <div class="contenedorsidebar">
+    {% for itemdetalle in detalle_html %}
+      <h3>{{ itemdetalle.videojuego.titulo }}</h3>
+      <p>{{ itemdetalle.videojuego.precio }} €</p>
+      <a class="a_vaciar_individual" href="{{ url_for('catalog.vaciar_individual_detalles', detalle_id=itemdetalle.id) }}">Quitar del carrito</a>  <br> <br> <!--Llamamos al método de vista que elimina un videojuego del carrito-->
+    {% endfor %}
+  </div>
+
+  
+  <h4>El precio total es: {{ precio_total_html }} €</h4>
+  <a id="a_comprar" href="{{ url_for('catalog.proceso_compra', total=precio_total_html) }}">¡Compra Ya!</a> <!--Llamamos al método de vista que le da paso al proceso de compra, mandando a su vez el parámetro del precio total-->
+  
+  <br><br>
+  <a id="a_vaciar" href="{{ url_for('catalog.vaciar_carro') }}">Vaciar el carrito</a> <!--Llamamos al método de vista que vacía el carrito-->
+</div>
+
+
+
+
+
+<div v id="mySidebar2" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">×</a>
+  
+  <h2>Favoritos</h2>
+
+  <!--Bucle for para poder obtener los datos de favoritos mediante los atributos de la tabla gracias a una variable que hemos pasado en el archivo de vistas-->
+<div class="contenedorsidebar">
+    {% for itemfav in favoritos_html %}
+        <h3>{{ itemfav.titulo }}</h3> <br>
+        <a class="a_vaciar_individual" href="{{ url_for('catalog.vaciar_individual_favoritos') }}">Quitar favorito</a>  <br> <br> <!--Llamamos al método de vista que elimina un videojuego de la lista de favoritos-->
+    {% endfor %}
+
+    <a id="a_vaciar_fav" href="{{ url_for('catalog.vaciar_fav') }}">Vaciar Favoritos</a> <!--Llamamos al método de vista que vacía la lista de favoritos-->
+
+</div>
+
+</div>
+
+  
+
+ 
+    
+ `,}).mount('#app');
+
+    </script>
+
+
+<script>
+
+  // Script que nos permite darle la funcionalidad a la barra de navegación, (en la bibliografía tenemos la fuente)
+
+
+  // Obtenemos los atributos y clases del card dentro del bucle para poder darle funcionalidad
+const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardContainer = document.querySelector(".containerbucle");
+const searchInput = document.querySelector("[data-search]");
+
+let users = []; // Creamos un array llamdo users (misma variable que usa en el vídeo)
+
+// Gracias a esto pasamos todo lo que queremos buscar a mínusculas para que la búsqueda sea precisa, y mediante un forEach hacemos lo mismo pero añadiendo el tema de ocultar o mostrar el card según el resultado de la búsqueda
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  users.forEach(user => {
+    const isVisible = user.Nombre.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
+
+
+
+// Esta parte del código si que la hemos modificado nosotros, ya que no necesitábamos un fetch
+
+// Obtenemos todo el contenido de cada clase card mediante un querySelectorAll y gracias al forEach vamos iterando por cada card, asignamos las variables de header y body y les asignamos el valor de las clases que queremos mediante un innerText (hemos modificado solo el tema del innerText en este caso)
+userCardContainer.querySelectorAll(".card").forEach(card => {
+  const header = card.querySelector(".card-title").innerText;
+
+  const body = card.querySelector(".card-text").innerText; 
+
+  users.push({ 
+    Nombre: header, 
+    Precio: body, 
+    element: card 
+  });
+});
+// Introducimos en el array el Nombre, el precio y el elemento que es el card, ya que en las variables header y body estaba la información que queríamos para que la búsqueda se pueda realizar
+
+
+</script>
+
+
+
+
+{% endblock %}

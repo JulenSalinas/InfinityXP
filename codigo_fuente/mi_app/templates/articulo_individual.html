@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <div>
+    <h2>Detalles del Coche</h2>
+    <p>Marca: {{ articulo_html.titulo }}</p>
+    <p>Modelo: {{ articulo_html.precio }}</p>
+
+
+    <a href="{{ url_for('catalog.home') }}">Volver a la página principal</a>
+  </div>
+{% endblock %}

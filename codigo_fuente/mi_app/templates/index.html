@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<h1>InfinityXP</h1>
+<hr>
+
+
+<!--Galería de los próximos lanzamientos hecho con Bootstrap-->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/71d4d17edcd49703a5ea446cc0e588e6.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Grand Theft Auto VI</h5>
+        <p>Esperemos que algún día llegue.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images8.alphacoders.com/138/1385441.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>The Witcher IV</h5>
+        <p>La nueva entrega de CD Project que llegará este año o en 2026.</p>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <img src="https://www.zonammorpg.com/wp-content/uploads/2025/01/thebloodofdawnwalkerpic2025.jpg"  class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>The Blood of Dawnwalker</h5>
+        <p>Una nueva IP de los creadores de The Witcher III.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://external-preview.redd.it/1CDk-EtvW2eEKZAFt9mWNTEepvZWlhESi7Ek2habk7k.jpg?auto=webp&s=9855f0ebf78bcad6fd1aee44856c3892f0edf205"  class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<!--Precios disponibles sobre la plataforma de InfinityXP hecho con Bootstrap-->
+
+<section class="section pt-5 pb-5" id="pricing-plans">
+  <div class="top"></div>
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="center-heading">
+          <h2 class="section-title">Planes de Pricing</h2>
+        </div>
+      </div>
+      <div class="offset-lg-3 col-lg-6">
+        <div class="center-text">
+          <p>Adquiere ventajas adicionales sobre otros usuarios con cualquiera de los siguientes planes.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-item">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Plan Básico</h3>
+          </div>
+          <div class="pricing-body">
+            <div class="price-wrapper">
+              <span class="currency">€</span>
+              <span class="price">10.90</span>
+              <span class="period">/Al mes</span>
+            </div>
+            <ul class="list">
+              <li class="active">Más caracteres por comentario</li>
+              <li class="active">Mayor cantidad comentarios</li>
+              <li class="active">Soporte 24/7</li>
+              <li class="active">Información adicional</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="#" class="btn-primary-line">Adquirir ahora</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-item active">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Plan Avanzado</h3>
+          </div>
+          <div class="pricing-body">
+            <div class="price-wrapper">
+              <span class="currency">€</span>
+              <span class="price">24.90</span>
+              <span class="period">/Al mes</span>
+            </div>
+            <ul class="list">
+              <li class="active">Más cantidad de comentarios que el plan básico</li>
+              <li class="active">Backups</li>
+              <li class="active">Crear múltiples usuarios</li>
+
+              <li class="active">Más caracteres por comentario</li>
+              <li class="active">Mayor cantidad comentarios</li>
+              <li class="active">Soporte 24/7</li>
+              <li class="active">Información adicional</li>
+           
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="#" class="btn-primary-line">Adquirir ahora</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-item">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Plan Pro</h3>
+          </div>
+          <div class="pricing-body">
+            <div class="price-wrapper">
+              <span class="currency">€</span>
+              <span class="price">49.90</span>
+              <span class="period">/Al mes</span>
+            </div>
+            <ul class="list">
+              <li class="active">Mayor velocidad de la página</li>
+              <li class="active">Opción de personalizar la página</li>
+              <li class="active">Cambiar entre tema claro/oscuro</li>
+              
+              <li class="active">Más cantidad de comentarios que el plan avanzado</li>
+              <li class="active">Backups</li>
+              <li class="active">Crear múltiples usuarios</li>
+
+              <li class="active">Más caracteres por comentario</li>
+              <li class="active">Mayor cantidad comentarios</li>
+              <li class="active">Soporte 24/7</li>
+              <li class="active">Información adicional</li>
+
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="#" class="btn-primary-line">Adquirir ahora</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<br>
+
+
+<!--Jumbotron hecho con Bootstrap-->
+<div class="container py-5 bg-light" style="width: 100%;">
+  <h1 class="display-4">INFINITY XP</h1> 
+  <p class="lead">Infinity XP es una tienda online especializada en la venta de juegos digitales para todas las plataformas. Ofrecemos una experiencia de compra rápida, segura y conveniente, permitiéndote acceder a los mejores títulos de videojuegos al instante.</p>
+  <hr class="my-4">
+  
+  <p>Nos enfocamos en tener una amplia selección de juegos para PC, Xbox, PlayStation, Nintendo y más. En Infinity XP, nuestra pasión es el mundo de los videojuegos y nos esforzamos para que tu experiencia de compra sea tan emocionante como jugar. ¡Explora, compra y empieza a jugar en minutos!</p>
+
+</div>
+
+
+
+
+  <!--Si el usuario tiene la sesión iniciada, le muestra la sección de comentarios, sino no-->
+    {% if current_user.is_authenticated %}
+   
+    <br>
+
+    <!--Formulario de comentarios-->
+    <h3>Comentarios</h3>
+    <form id="formulario_comentarios" method="GET" action="{{ url_for('catalog.comentario') }}" role="form">
+      <div id="div_comentarios">
+        <label for="comentario">Nuevo Comentario:</label>
+        <input type="text" id="comentario" name="comentario" required placeholder="Comparte algo">
+      </div>
+  
+      <br>
+      <button type="submit" id="boton_comentarios">Compartir el comentario</button>
+    </form>
+
+
+      <br>
+
+
+      
+    <div>
+      <!--Bucle sobre la variable que hemos mandado en vistas, gracias a eso podemos acceder a los atributos y gracias al backref de usuario a campos de dicha tabla también-->
+      {% for coment in datos_comentarios_html %} 
+
+          <div class="comentario_individual">
+          <img src ="../static/img/usuario.png" width="100px">  
+          <h4>{{coment.usuario.username}}</h4> <br>
+          <p>{{coment.comentario}}</p>
+        </div>
+        <br>
+      {% endfor %}
+  </div>
+  
+
+
+    {% endif %}
+
+
+</div>
+
+
+
+<!--Aquí tenemos la ventana que sale cuando entras a la página, tanto este HTML y su JavaScript están basados y sacados de Bootstrap-->
+
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="miModalLabel">¡¡Reserva Ya!!</h5>
+
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Nuevo DLC de Lies Of P
+        <img src="https://media.vandal.net/m/11-2023/1/202311111194796_1.jpg" width="460px">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reservar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+ 
+  window.onload = function () {
+    var myModal = new bootstrap.Modal(document.getElementById('miModal'));
+    myModal.show();
+  }
+</script>
+{% endblock %} 
